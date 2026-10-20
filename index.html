@@ -76,6 +76,20 @@
     <img class="title" src="imgs/popcat.svg" alt="POPCAT">
     <div class="cat-img" id="p">1009</div>
 </div>
+<script>
+    let count = 0;
+    const catCount = document.getElementById("p");
+    catCount.innerHTML = count;    //也可以不寫，但是77 div那一行裡面的數字要改，例如改成0，這樣就會從0開始計數
+
+    function updateCount() {
+        count++;
+        console.log(count);
+        catCount.innerHTML = count;
+    }
+    document.addEventListener("click", updateCount);
+    document.addEventListener("keydown", updateCount); 
+        
+</script>
 
 </body>
 </html>
