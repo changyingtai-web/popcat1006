@@ -74,20 +74,52 @@
 <body>
 <div class="container">
     <img class="title" src="imgs/popcat.svg" alt="POPCAT">
-    <div class="cat-img" id="p">1009</div>
+    <div class="cat-img" id="p">1000
+    </div>
+
+
 </div>
 <script>
     let count = 0;
     const catCount = document.getElementById("p");
     catCount.innerHTML = count;    //也可以不寫，但是77 div那一行裡面的數字要改，例如改成0，這樣就會從0開始計數
+    //htmlcount.innerTest =  count;
 
     function updateCount() {
         count++;
         console.log(count);
         catCount.innerHTML = count;
+
+        catCount.id = "op";
     }
-    document.addEventListener("click", updateCount);
+    //const updatecount = (){
+    //htmlCount.innerTest =  count;
+    //  count++;
+    // console.log(count);
+    // catCount.innerHTML = count;
+    // catCount.id = "op";
+    //}
+
+
+    //const closeMouth = function closeMouth() {
+    //    catCount.id = "p";
+    //}
+    //箭頭函式
+    const cloeMounth = () => {    //不能更改
+        catCount.id = "p";
+    }   
+
+
+
+    closeMoutth = cloeMounth;  //這行是為了讓closeMouth()可以被呼叫，因為原本的函式名稱是cloeMounth，這樣就可以用closeMouth()來呼叫cloeMounth()了
+
+
+    //document.addEventListener("click", updateCount);     clic沒有單純點擊的動作，只有按鍵按下和放開的動作
+    document.addEventListener("pointerdown", updateCount); 
+    document.addEventListener("pointerup", cloeMounth);
+    //按下滑鼠左鍵
     document.addEventListener("keydown", updateCount); 
+    document.addEventListener("keyup", cloeMounth);
         
 </script>
 
